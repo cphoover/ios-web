@@ -1,0 +1,11 @@
+#!/bin/sh
+
+  osascript <<EOS
+    tell application "iPhone Simulator"
+      activate
+    end tell
+EOS
+cd "$(dirname ${BASH_SOURCE[0]})/.."
+echo "pwd:$(pwd)"
+java -jar ./ios-web.jar $1 $(pwd)
+cd -
